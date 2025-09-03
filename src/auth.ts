@@ -16,8 +16,8 @@ export const providerMap = providers.map((provider) => {
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [GitHub],
   pages: {
-    signIn: "/signin",
-    signOut: "/signout",
+    signIn: "/",
+    signOut: "/",
     error: "/error",
   },
 });

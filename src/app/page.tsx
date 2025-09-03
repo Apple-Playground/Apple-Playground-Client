@@ -1,7 +1,12 @@
+import { Header } from "@/widgets/header/ui";
+
 export default function Home() {
   return (
-    <main>
-      <h1>This is Landing Page.</h1>
-    </main>
+    <>
+      <Header />
+      <main>
+        <h1>This is Landing Page.</h1>
+      </main>
+    </>
   );
 }

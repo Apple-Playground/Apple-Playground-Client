@@ -1,14 +1,13 @@
 import { redirect } from "next/navigation"
 import { signIn, providerMap } from "@/auth"
 import { AuthError } from "next-auth"
-import { Button } from "@/components/ui/button";
+import { Button } from "@/shared/ui/button";
 
 const SIGNIN_ERROR_URL = "/error"
 
-export default async function SignInPage(props: { searchParams: Promise<{ callbackUrl: string | undefined }> }) {
-  const params = await props.searchParams;
+export default async function SignInButton() {
   return (
-    <div className="flex flex-col gap-2">
+    <div>
       {Object.values(providerMap).map((provider) => (
         <form
           key={provider.id}
@@ -16,7 +15,7 @@ export default async function SignInPage(props: { searchParams: Promise<{ callba
             "use server"
             try {
               await signIn(provider.id, {
-                redirectTo: params.callbackUrl ?? "",
+                redirectTo: "/",
               })
             } catch (error) {
               if (error instanceof AuthError) {
