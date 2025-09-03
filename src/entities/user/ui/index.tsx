@@ -1,9 +1,9 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
-import { auth } from "@/auth"
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { auth } from "@/auth";
 
 export default async function UserAvatar() {
-  const session = await auth()
-  if (!session?.user?.image) return null
+  const session = await auth();
+  if (!session?.user?.image) return null;
 
   return (
     <Avatar>
@@ -14,5 +14,5 @@ export default async function UserAvatar() {
       />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
-  )
+  );
 }
