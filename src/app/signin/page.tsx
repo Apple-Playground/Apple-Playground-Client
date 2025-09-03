@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation"
 import { signIn, providerMap } from "@/auth"
 import { AuthError } from "next-auth"
+import { Button } from "@/components/ui/button";
 
 const SIGNIN_ERROR_URL = "/error"
 
@@ -25,9 +26,9 @@ export default async function SignInPage(props: { searchParams: Promise<{ callba
             }
           }}
         >
-          <button type="submit">
+          <Button type="submit" variant={"default"}>
             <span>Sign in with {provider.name}</span>
-          </button>
+          </Button>
         </form>
       ))}
     </div>
