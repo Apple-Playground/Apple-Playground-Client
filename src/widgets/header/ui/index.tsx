@@ -8,12 +8,17 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/shared/ui/navigation-menu";
+import Image from "next/image";
+import ApplePlaygroundLogo from "@/shared/assets/applePlaygroundLogo.png";
 
 export const Header = async () => {
   const session = await auth();
 
   return (
-    <header className="flex justify-between sw-full bg-primary p-2">
+    <header className="flex justify-between sw-full p-2 bg-primary">
+      <h1 className="flex items-center gap-2 text-xl font-bold text-background">
+        <Image src={ApplePlaygroundLogo} alt="logo" width={32} height={32} />
+      </h1>
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -23,10 +28,8 @@ export const Header = async () => {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <NavigationMenu>
-        {session?.user ? <SignOutButton /> : <SignInButton />}
-        <UserAvatar />
-      </NavigationMenu>
+      {session?.user ? <SignOutButton /> : <SignInButton />}
+      <UserAvatar />
     </header>
   );
 };
