@@ -15,7 +15,7 @@ export const Header = async () => {
   const session = await auth();
 
   return (
-    <header className="flex justify-between sw-full p-2 bg-primary">
+    <header className="flex justify-between w-full p-2 bg-primary fixed top-0 z-10">
       <h1 className="flex items-center gap-2 text-xl font-bold text-background">
         <Image src={ApplePlaygroundLogo} alt="logo" width={32} height={32} />
       </h1>
@@ -28,8 +28,10 @@ export const Header = async () => {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      {session?.user ? <SignOutButton /> : <SignInButton />}
-      <UserAvatar />
+      <div className="flex items-center gap-4">
+        {session?.user ? <SignOutButton /> : <SignInButton />}
+        <UserAvatar />
+      </div>
     </header>
   );
 };
