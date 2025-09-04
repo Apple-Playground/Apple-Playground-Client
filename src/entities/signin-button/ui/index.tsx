@@ -27,7 +27,7 @@ export default async function SignInButton() {
             }
           }}
         >
-          <Button type="submit" variant={"default"} className="cursor-pointer">
+          <Button type="submit" variant={"default"} className="cursor-pointer hover:bg-popover-foreground">
             <Image src={Github_Logo} alt="github sign-in" className="size-5" />
             <span>{provider.name}</span>
           </Button>
