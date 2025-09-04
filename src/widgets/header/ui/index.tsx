@@ -10,6 +10,7 @@ import {
 } from "@/shared/ui/navigation-menu";
 import Image from "next/image";
 import ApplePlaygroundLogo from "@/shared/assets/applePlaygroundLogo.png";
+import { ModeToggle } from "@/shared/ui/mode-togle";
 
 export const Header = async () => {
   const session = await auth();
@@ -31,6 +32,7 @@ export const Header = async () => {
       <div className="flex items-center gap-4">
         {session?.user ? <SignOutButton /> : <SignInButton />}
         <UserAvatar />
+        <ModeToggle />
       </div>
     </header>
   );

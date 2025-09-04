@@ -4,10 +4,10 @@ import { AuthError } from "next-auth";
 import { Button } from "@/shared/ui/button";
 import Github_Logo from "@/shared/assets/github.svg";
 import Image from "next/image";
-
-const SIGNIN_ERROR_URL = "/error";
+import { toast } from "sonner";
 
 export default async function SignInButton() {
+
   return (
     <div>
       {Object.values(providerMap).map((provider) => (
@@ -16,12 +16,12 @@ export default async function SignInButton() {
           action={async () => {
             "use server";
             try {
-              await signIn(provider.id, {
-                redirectTo: "/",
-              });
+              await signIn(provider.id);
+              toast.success("Sign in success!");
             } catch (error) {
               if (error instanceof AuthError) {
-                return redirect(`${SIGNIN_ERROR_URL}?error=${error.type}`);
+                toast.error("Sign in failed!");
+                return redirect(`/error?error=${error.type}`);
               }
               throw error;
             }
