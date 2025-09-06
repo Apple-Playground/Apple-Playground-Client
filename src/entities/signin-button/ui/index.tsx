@@ -16,7 +16,7 @@ export default async function SignInButton() {
           action={async () => {
             "use server";
             try {
-              await signIn(provider.id);
+              await signIn(provider.id, { redirectTo: "/main" });
               toast.success("Sign in success!");
             } catch (error) {
               if (error instanceof AuthError) {
@@ -27,9 +27,9 @@ export default async function SignInButton() {
             }
           }}
         >
-          <Button type="submit" variant={"default"} className="cursor-pointer hover:bg-popover-foreground">
+          <Button type="submit" variant={"default"} className="cursor-pointer px-[33px] py-0.25 bg-[#1F2937] hover:bg-[#101317]">
             <Image src={Github_Logo} alt="github sign-in" className="size-5" />
-            <span>{provider.name}</span>
+            <span className="font-semibold">{provider.name}으로 로그인</span>
           </Button>
         </form>
       ))}

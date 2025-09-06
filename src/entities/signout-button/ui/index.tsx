@@ -11,7 +11,7 @@ export default function SignOutButton() {
         action={async () => {
           "use server";
           try {
-            await signOut();
+            await signOut({ redirectTo: "/" });
             toast.success("Sign out success!");
           } catch (error) {
             if (error instanceof AuthError) {
