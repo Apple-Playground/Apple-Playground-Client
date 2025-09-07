@@ -5,7 +5,7 @@ import { BubbleBackground } from "@/shared/ui/bubble";
 export default function Home() {
   return (
     <BubbleBackground className="flex justify-center items-center bg-black min-h-screen py-8 px-4">
-      <div className="flex flex-col items-center justify-center max-w-md text-white text-center z-20">
+      <div className="flex flex-col items-center justify-center py-12 rounded-2xl max-w-md border border-gray-500/20 text-white text-center z-20 bg-spring-green-19/25 backdrop-blur-2xl">
         <div className="p-4 mb-8 rounded-2xl bg-gray-800">
           <AppleIcon width={64} height={64} />
         </div>
