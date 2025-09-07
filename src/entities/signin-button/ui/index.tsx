@@ -1,40 +1,39 @@
+// SignInButton.tsx
+"use client";
 import Image from "next/image";
-import { redirect } from "next/navigation";
-import { AuthError } from "next-auth";
+import { signIn } from "next-auth/react";
 import { toast } from "sonner";
-import { providerMap, signIn } from "@/auth";
 import Github_Logo from "@/shared/assets/github.svg";
 import { Button } from "@/shared/ui/button";
 
-export default async function SignInButton() {
+interface Provider {
+  id: string;
+  name: string;
+}
+
+export default function SignInButton({ providers }: { providers: Provider[] }) {
+  const handleSignIn = (providerId: string, providerName: string) => {
+    const signInPromise = signIn(providerId, { redirectTo: "/main" });
+
+    toast.promise(signInPromise, {
+      loading: `${providerName}으로 로그인 중...`,
+      success: "로그인 성공!",
+      error: "로그인에 실패했습니다. 다시 시도해주세요.",
+    });
+  };
+
   return (
     <div>
-      {Object.values(providerMap).map((provider) => (
-        <form
+      {providers.map((provider) => (
+        <Button
           key={provider.id}
-          action={async () => {
-            "use server";
-            try {
-              await signIn(provider.id, { redirectTo: "/main" });
-              toast.success("Sign in success!");
-            } catch (error) {
-              if (error instanceof AuthError) {
-                toast.error("Sign in failed!");
-                return redirect(`/error?error=${error.type}`);
-              }
-              throw error;
-            }
-          }}
+          onClick={() => handleSignIn(provider.id, provider.name)}
+          variant={"default"}
+          className="cursor-pointer px-[33px] py-0.25 bg-[#1F2937] hover:bg-[#101317]"
         >
-          <Button
-            type="submit"
-            variant={"default"}
-            className="cursor-pointer px-[33px] py-0.25 bg-[#1F2937] hover:bg-[#101317]"
-          >
-            <Image src={Github_Logo} alt="github sign-in" className="size-5" />
-            <span className="font-semibold">{provider.name}으로 로그인</span>
-          </Button>
-        </form>
+          <Image src={Github_Logo} alt="github sign-in" className="size-5" />
+          <span className="font-semibold">{provider.name}으로 로그인</span>
+        </Button>
       ))}
     </div>
   );
