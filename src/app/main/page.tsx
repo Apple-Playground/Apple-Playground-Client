@@ -5,7 +5,7 @@ export default function Main() {
   return (
     <>
       <Header />
-      <main className="min-h-screen py-8 px-4">
+      <main className="min-h-screen bg-grey-10 py-8 px-4">
         <Posts />
       </main>
     </>
