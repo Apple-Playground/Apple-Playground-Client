@@ -1,13 +1,12 @@
-import { redirect } from "next/navigation";
-import { signIn, providerMap } from "@/auth";
-import { AuthError } from "next-auth";
-import { Button } from "@/shared/ui/button";
-import Github_Logo from "@/shared/assets/github.svg";
 import Image from "next/image";
+import { redirect } from "next/navigation";
+import { AuthError } from "next-auth";
 import { toast } from "sonner";
+import { providerMap, signIn } from "@/auth";
+import Github_Logo from "@/shared/assets/github.svg";
+import { Button } from "@/shared/ui/button";
 
 export default async function SignInButton() {
-
   return (
     <div>
       {Object.values(providerMap).map((provider) => (
@@ -27,7 +26,11 @@ export default async function SignInButton() {
             }
           }}
         >
-          <Button type="submit" variant={"default"} className="cursor-pointer px-[33px] py-0.25 bg-[#1F2937] hover:bg-[#101317]">
+          <Button
+            type="submit"
+            variant={"default"}
+            className="cursor-pointer px-[33px] py-0.25 bg-[#1F2937] hover:bg-[#101317]"
+          >
             <Image src={Github_Logo} alt="github sign-in" className="size-5" />
             <span className="font-semibold">{provider.name}으로 로그인</span>
           </Button>
