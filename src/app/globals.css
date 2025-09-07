@@ -39,6 +39,43 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  
+  /* Figma Color Palette */
+  
+  /* Grey Scale */
+  --color-grey-16: #282828;
+  --color-grey-10: #1A1A1A;
+  --color-grey-20: #333333;
+  --color-grey-13: #222222;
+  --color-grey-46: #6B7280;
+  --color-grey-10-80: rgba(26, 26, 26, 0.8);
+  --color-grey-5: #0D0D0D;
+  --color-grey-96: #F3F4F6;
+  
+  /* White */
+  --color-white: #FFFFFF;
+  --color-white-solid: #FFFFFF;
+  --color-white-5: rgba(255, 255, 255, 0.05);
+  
+  /* Azure/Blue */
+  --color-azure-65: #9CA3AF;
+  --color-azure-84: #D1D5DB;
+  --color-azure-17: #1F2937;
+  --color-azure-27: #374151;
+  --color-azure-17-50: rgba(31, 41, 55, 0.5);
+  --color-azure-11: #111827;
+  
+  /* Spring Green */
+  --color-spring-green-55: #3BE078;
+  --color-spring-green-19: #29382F;
+  --color-spring-green-8: #111714;
+  --color-spring-green-12: #1C2320;
+  --color-spring-green-67: #9EB7A8;
+  
+  /* Black */
+  --color-black: #000000;
+  --color-black-solid: #000000;
+  
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
