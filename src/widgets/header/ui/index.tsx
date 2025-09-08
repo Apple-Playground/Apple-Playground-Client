@@ -1,16 +1,15 @@
+import Image from "next/image";
 import { auth } from "@/auth";
-import SignInButton from "@/entities/signin-button/ui";
 import SignOutButton from "@/entities/signout-button/ui";
 import UserAvatar from "@/entities/user/ui";
+import ApplePlaygroundLogo from "@/shared/assets/applePlaygroundLogo.png";
+import { ModeToggle } from "@/shared/ui/mode-togle";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/shared/ui/navigation-menu";
-import Image from "next/image";
-import ApplePlaygroundLogo from "@/shared/assets/applePlaygroundLogo.png";
-import { ModeToggle } from "@/shared/ui/mode-togle";
 
 export const Header = async () => {
   const session = await auth();
@@ -30,7 +29,7 @@ export const Header = async () => {
         </NavigationMenuList>
       </NavigationMenu>
       <div className="flex items-center gap-4">
-        {session?.user ? <SignOutButton /> : <SignInButton />}
+        {session?.user && <SignOutButton />}
         <UserAvatar />
         <ModeToggle />
       </div>
