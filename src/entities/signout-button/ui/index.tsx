@@ -1,8 +1,7 @@
+import { redirect } from "next/navigation";
+import { AuthError } from "next-auth";
 import { signOut } from "@/auth";
 import { Button } from "@/shared/ui/button";
-import { AuthError } from "next-auth";
-import { redirect } from "next/navigation";
-import { toast } from "sonner";
 
 export default function SignOutButton() {
   return (
@@ -12,10 +11,8 @@ export default function SignOutButton() {
           "use server";
           try {
             await signOut({ redirectTo: "/" });
-            toast.success("Sign out success!");
           } catch (error) {
             if (error instanceof AuthError) {
-              toast.error("Sign out failed!");
               return redirect(`/error?error=${error.type}`);
             }
             throw error;
