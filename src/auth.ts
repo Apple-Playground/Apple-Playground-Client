@@ -1,8 +1,10 @@
 import { SupabaseAdapter } from "@auth/supabase-adapter";
-import jwt from "jsonwebtoken";
+import * as jose from "jose";
 import NextAuth from "next-auth";
 import type { Provider } from "next-auth/providers";
 import GitHub from "next-auth/providers/github";
+
+export const runtime = "nodejs";
 
 const providers: Provider[] = [GitHub];
 
@@ -32,7 +34,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
           email: user.email,
           role: "authenticated",
         };
-        session.supabaseAccessToken = jwt.sign(payload, signingSecret);
+
+        const secret = new TextEncoder().encode(signingSecret);
+        session.supabaseAccessToken = await new jose.SignJWT(payload)
+          .setProtectedHeader({ alg: "HS256" })
+          .sign(secret);
       }
       return session;
     },
