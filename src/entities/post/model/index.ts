@@ -12,6 +12,10 @@ export const postSchema = z.object({
   hearts: z.number().nullable(),
   tags: z.array(z.string()).nullable(),
   content: z.any(),
+  users: z.object({
+    name: z.string().nullable(),
+    image: z.string().nullable(),
+  }),
 });
 
 export const postsSchema = z.array(postSchema);

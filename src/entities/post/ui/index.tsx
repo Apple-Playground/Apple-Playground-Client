@@ -9,7 +9,6 @@ import {
 import type { Post as PostType } from "../model";
 
 export const Post = ({ post }: { post: PostType }) => {
-
   return (
     <Card className="flex p-4">
       <div className="aspect-[16/9] relative bg-black/85 rounded-2xl overflow-hidden">
@@ -31,7 +30,7 @@ export const Post = ({ post }: { post: PostType }) => {
       </CardHeader>
       <CardContent className="flex justify-between p-2 text-xs">
         <span>{post.created_at.split("T")[0]}</span>
-        <span>{post.author_id}</span>
+        <span>{post.users.name}</span>
       </CardContent>
     </Card>
   );
@@ -59,9 +58,9 @@ export const CarouselPost = ({ post }: { post: PostType }) => {
         </CardHeader>
         <CardContent className="flex justify-between p-2 text-xs">
           <span>{post.created_at.split("T")[0]}</span>
-          <span>{post.author_id}</span>
+          <span>{post.users.name}</span>
         </CardContent>
       </div>
     </Card>
   );
-}
+};

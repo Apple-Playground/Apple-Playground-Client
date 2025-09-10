@@ -1,4 +1,4 @@
-import NextAuth, { type DefaultSession } from "next-auth";
+import type { DefaultSession } from "next-auth";
 
 export type Json =
   | string
@@ -47,7 +47,15 @@ export type Database = {
           tags?: string[] | null;
           title?: string;
         };
-        Relationships: [];
+        Relationships: [
+          {
+            foreignKeyName: "posts_author_id_fkey";
+            columns: ["author_id"];
+            isOneToOne: false;
+            referencedRelation: "users";
+            referencedColumns: ["id"];
+          },
+        ];
       };
       users: {
         Row: {

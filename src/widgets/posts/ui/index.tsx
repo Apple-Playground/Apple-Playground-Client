@@ -8,8 +8,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/shared/ui/carousel";
 
 type PostsProps = {
@@ -35,8 +33,6 @@ export const Posts = ({ posts }: PostsProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
       <h2 className="text-spring-green-55 font-pixel font-bold text-2xl">
         Posts

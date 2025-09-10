@@ -3,7 +3,13 @@ import { createSupabase } from "@/client";
 export const getPosts = async () => {
   const supabase = await createSupabase();
 
-  const { data, error } = await supabase.from("posts").select("*");
+  const { data, error } = await supabase.from("posts").select(`
+    *,
+    users!posts_author_id_fkey(
+      name,
+      image
+    )
+  `);
 
   if (error) {
     console.error("Error fetching posts:", error);
