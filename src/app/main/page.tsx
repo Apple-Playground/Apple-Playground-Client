@@ -1,18 +1,16 @@
 import { Suspense } from "react";
-import { getPosts } from "@/entities/post/api";
+import { getPosts } from "@/entities/post/api/getPosts";
 import { Header } from "@/widgets/header/ui";
 import { Posts } from "@/widgets/posts/ui";
 
 export default function Main() {
   const posts = getPosts();
   return (
-    <>
+    <main className="w-full min-h-screen bg-primary-foreground p-8">
       <Header />
-      <main className="min-h-screen bg-grey-10 py-8 px-4">
-        <Suspense fallback={<div>Loading...</div>}>
-          <Posts posts={posts} />
-        </Suspense>
-      </main>
-    </>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Posts posts={posts} />
+      </Suspense>
+    </main>
   );
 }
