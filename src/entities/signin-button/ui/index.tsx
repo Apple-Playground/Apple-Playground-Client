@@ -31,7 +31,7 @@ export default function SignInButton({ providers }: { providers: Provider[] }) {
           className="cursor-pointer px-[33px] py-0.25 bg-[#1F2937] hover:bg-[#101317]"
         >
           <Image src={Github_Logo} alt="github sign-in" className="size-5" />
-          <span className="font-semibold">{provider.name}으로 로그인</span>
+          <span className="font-semibold text-white/70">{provider.name}으로 로그인</span>
         </Button>
       ))}
     </div>
