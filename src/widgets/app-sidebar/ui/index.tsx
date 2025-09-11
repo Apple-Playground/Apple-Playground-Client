@@ -3,18 +3,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
-import {
-  Calendar,
-  ChevronUp,
-  Home,
-  Inbox,
-  Search,
-  Settings,
-} from "lucide-react";
+import { ChevronUp, } from "lucide-react";
 import { auth } from "@/auth";
 import UserAvatar from "@/entities/user/ui";
 import { DropdownMenu } from "@/shared/ui/dropdown-menu";
-import { ModeToggle } from "@/shared/ui/mode-togle";
 import {
   Sidebar,
   SidebarContent,
@@ -27,41 +19,14 @@ import {
   SidebarMenuItem,
 } from "@/shared/ui/sidebar";
 
-// Menu items.
-const items = [
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-];
+import { sideBarList } from "../model/app-sidebar-list";
 
 export const AppSidebar = async () => {
   const session = await auth();
 
   return (
     <Sidebar>
-      <SidebarHeader>
+      <SidebarHeader className="pb-2 border-b-2">
         <h1 className="text-primary font-orbitron font-bold text-lg">
           Apple Playground
         </h1>
@@ -71,7 +36,7 @@ export const AppSidebar = async () => {
         <SidebarGroup className="gap-8">
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
+              {sideBarList.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <a href={item.url}>
@@ -101,9 +66,6 @@ export const AppSidebar = async () => {
               >
                 <DropdownMenuItem>
                   <span>Sign out</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <span>Theme Toggle</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
