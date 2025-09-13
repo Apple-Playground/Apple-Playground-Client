@@ -11,7 +11,7 @@ export const postSchema = z.object({
   description: z.string().nullable(),
   hearts: z.number().nullable(),
   tags: z.array(z.string()).nullable(),
-  content: z.any(),
+  content: z.string(),
   users: z.object({
     name: z.string().nullable(),
     image: z.string().nullable(),

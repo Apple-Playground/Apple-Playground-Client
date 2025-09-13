@@ -19,7 +19,7 @@ export type Database = {
       posts: {
         Row: {
           author_id: string;
-          content: Json;
+          content: string;
           created_at: string;
           description: string | null;
           hearts: number | null;
@@ -29,7 +29,7 @@ export type Database = {
         };
         Insert: {
           author_id: string;
-          content: Json;
+          content: string;
           created_at?: string;
           description?: string | null;
           hearts?: number | null;
@@ -39,7 +39,7 @@ export type Database = {
         };
         Update: {
           author_id?: string;
-          content?: Json;
+          content?: string;
           created_at?: string;
           description?: string | null;
           hearts?: number | null;
