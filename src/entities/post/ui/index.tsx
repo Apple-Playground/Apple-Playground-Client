@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import {
   Card,
   CardContent,
@@ -9,6 +11,8 @@ import {
 import type { Post as PostType } from "../model";
 
 export const Post = ({ post }: { post: PostType }) => {
+  const router = useRouter();
+
   return (
     <Card className="flex p-4">
       <div className="aspect-[16/9] relative bg-black/85 rounded-2xl overflow-hidden">
@@ -17,11 +21,15 @@ export const Post = ({ post }: { post: PostType }) => {
           alt="image"
           fill
           unoptimized
-          className="object-cover"
+          onClick={() => router.push(`/post/${post.id}`)}
+          className="object-cover cursor-pointer"
         />
       </div>
       <CardHeader className="p-2">
-        <CardTitle className="line-clamp-1 text-ellipsis">
+        <CardTitle
+          className="line-clamp-1 text-ellipsis cursor-pointer"
+          onClick={() => router.push(`/post/${post.id}`)}
+        >
           {post.title}
         </CardTitle>
         <CardDescription className="line-clamp-2 text-ellipsis">
