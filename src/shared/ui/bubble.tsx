@@ -93,6 +93,7 @@ function BubbleBackground({
         xmlns="http://www.w3.org/2000/svg"
         className="absolute top-0 left-0 w-0 h-0"
       >
+        <title>Gooey filter for bubble background</title>
         <defs>
           <filter id="goo">
             <feGaussianBlur
