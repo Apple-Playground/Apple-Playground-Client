@@ -3,7 +3,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
-import { ChevronUp, } from "lucide-react";
+import { ChevronUp } from "lucide-react";
 import { auth } from "@/auth";
 import UserAvatar from "@/entities/user/ui";
 import { DropdownMenu } from "@/shared/ui/dropdown-menu";

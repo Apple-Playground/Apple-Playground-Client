@@ -4,11 +4,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { use } from "react";
 import type { Post as PostType } from "@/entities/post/model";
 import { CarouselPost, Post } from "@/entities/post/ui";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/shared/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/shared/ui/carousel";
 
 type PostsProps = {
   posts: Promise<PostType[]>;

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Pixelify+Sans:wght@400..700&display=swap");
 
 @import "tailwindcss";
 @import "tw-animate-css";
@@ -11,7 +11,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-orbitron: "Orbitron" , ui-sans-serif, system-ui, sans-serif;
+  --font-orbitron: "Orbitron", ui-sans-serif, system-ui, sans-serif;
   --font-pixel: "Pixelify Sans", ui-sans-serif, system-ui, sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -47,33 +47,33 @@
 
   /* Grey Scale */
   --color-grey-16: #282828;
-  --color-grey-10: #1A1A1A;
+  --color-grey-10: #1a1a1a;
   --color-grey-20: #333333;
   --color-grey-13: #222222;
-  --color-grey-46: #6B7280;
+  --color-grey-46: #6b7280;
   --color-grey-10-80: rgba(26, 26, 26, 0.8);
-  --color-grey-5: #0D0D0D;
-  --color-grey-96: #F3F4F6;
+  --color-grey-5: #0d0d0d;
+  --color-grey-96: #f3f4f6;
 
   /* White */
-  --color-white: #FFFFFF;
-  --color-white-solid: #FFFFFF;
+  --color-white: #ffffff;
+  --color-white-solid: #ffffff;
   --color-white-5: rgba(255, 255, 255, 0.05);
 
   /* Azure/Blue */
-  --color-azure-65: #9CA3AF;
-  --color-azure-84: #D1D5DB;
-  --color-azure-17: #1F2937;
+  --color-azure-65: #9ca3af;
+  --color-azure-84: #d1d5db;
+  --color-azure-17: #1f2937;
   --color-azure-27: #374151;
   --color-azure-17-50: rgba(31, 41, 55, 0.5);
   --color-azure-11: #111827;
 
   /* Spring Green */
-  --color-spring-green-55: #3BE078;
-  --color-spring-green-19: #29382F;
+  --color-spring-green-55: #3be078;
+  --color-spring-green-19: #29382f;
   --color-spring-green-8: #111714;
-  --color-spring-green-12: #1C2320;
-  --color-spring-green-67: #9EB7A8;
+  --color-spring-green-12: #1c2320;
+  --color-spring-green-67: #9eb7a8;
 
   /* Black */
   --color-black: #000000;
@@ -249,11 +249,11 @@
     .mdx-content h1 {
       @apply text-3xl;
     }
-    
+
     .mdx-content h2 {
       @apply text-2xl;
     }
-    
+
     .mdx-content h3 {
       @apply text-xl;
     }
