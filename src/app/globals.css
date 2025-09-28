@@ -3,6 +3,7 @@
 
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -163,99 +164,82 @@
   }
 }
 
-/* MDX Content Styles */
+/* Typography prose 커스터마이징 */
 @layer components {
-  .mdx-content {
-    @apply text-base leading-relaxed;
+  .prose {
+    --tw-prose-body: theme(colors.muted.foreground);
+    --tw-prose-headings: theme(colors.foreground);
+    --tw-prose-lead: theme(colors.muted.foreground);
+    --tw-prose-links: theme(colors.primary.DEFAULT);
+    --tw-prose-bold: theme(colors.foreground);
+    --tw-prose-counters: theme(colors.muted.foreground);
+    --tw-prose-bullets: theme(colors.muted.foreground);
+    --tw-prose-hr: theme(colors.border);
+    --tw-prose-quotes: theme(colors.foreground);
+    --tw-prose-quote-borders: theme(colors.primary.DEFAULT);
+    --tw-prose-captions: theme(colors.muted.foreground);
+    --tw-prose-code: theme(colors.foreground);
+    --tw-prose-pre-code: theme(colors.foreground);
+    --tw-prose-pre-bg: theme(colors.muted.DEFAULT);
+    --tw-prose-th-borders: theme(colors.border);
+    --tw-prose-td-borders: theme(colors.border);
   }
 
-  .mdx-content h1,
-  .mdx-content h2,
-  .mdx-content h3,
-  .mdx-content h4,
-  .mdx-content h5,
-  .mdx-content h6 {
-    @apply font-semibold scroll-mt-24;
+  .dark .prose {
+    --tw-prose-body: theme(colors.muted.foreground);
+    --tw-prose-headings: theme(colors.foreground);
+    --tw-prose-lead: theme(colors.muted.foreground);
+    --tw-prose-links: theme(colors.primary.DEFAULT);
+    --tw-prose-bold: theme(colors.foreground);
+    --tw-prose-counters: theme(colors.muted.foreground);
+    --tw-prose-bullets: theme(colors.muted.foreground);
+    --tw-prose-hr: theme(colors.border);
+    --tw-prose-quotes: theme(colors.foreground);
+    --tw-prose-quote-borders: theme(colors.primary.DEFAULT);
+    --tw-prose-captions: theme(colors.muted.foreground);
+    --tw-prose-code: theme(colors.foreground);
+    --tw-prose-pre-code: theme(colors.foreground);
+    --tw-prose-pre-bg: theme(colors.muted.DEFAULT);
+    --tw-prose-th-borders: theme(colors.border);
+    --tw-prose-td-borders: theme(colors.border);
   }
 
-  .mdx-content h1 {
-    @apply text-4xl mb-6 mt-8 first:mt-0;
+  /* prose 커스텀 스타일 오버라이드 */
+  .prose code {
+    @apply bg-muted/60 px-2 py-1 rounded text-sm font-mono border border-border;
   }
 
-  .mdx-content h2 {
-    @apply text-3xl mb-4 mt-8 first:mt-0;
+  .prose code::before,
+  .prose code::after {
+    content: "";
   }
 
-  .mdx-content h3 {
-    @apply text-2xl mb-3 mt-6 first:mt-0;
+  .prose pre {
+    @apply bg-muted border border-border shadow-sm;
   }
 
-  .mdx-content h4 {
-    @apply text-xl mb-2 mt-6 first:mt-0;
+  .prose pre code {
+    @apply bg-transparent border-none p-0;
   }
 
-  .mdx-content p {
-    @apply mb-4 text-muted-foreground;
-  }
-
-  .mdx-content ul,
-  .mdx-content ol {
-    @apply mb-4 pl-6;
-  }
-
-  .mdx-content li {
-    @apply mb-1;
-  }
-
-  .mdx-content blockquote {
-    @apply border-l-4 border-primary/30 pl-4 my-6 italic text-muted-foreground bg-muted/30 py-2 rounded-r;
-  }
-
-  .mdx-content pre {
-    @apply font-mono text-sm;
-  }
-
-  .mdx-content code {
-    @apply font-mono;
-  }
-
-  .mdx-content a {
-    @apply text-primary hover:text-primary/80 underline underline-offset-4 transition-colors;
-  }
-
-  .mdx-content img {
+  .prose img {
     @apply rounded-lg shadow-sm;
   }
 
-  .mdx-content hr {
-    @apply my-8 border-border;
+  .prose blockquote {
+    @apply bg-muted/30 py-2 rounded-r;
   }
 
-  .mdx-content table {
-    @apply w-full border-collapse;
+  .prose th {
+    @apply bg-muted;
   }
 
-  .mdx-content th,
-  .mdx-content td {
-    @apply border border-border px-4 py-2 text-left;
-  }
-
-  .mdx-content th {
-    @apply bg-muted font-semibold;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .mdx-content h1 {
-      @apply text-3xl;
-    }
-
-    .mdx-content h2 {
-      @apply text-2xl;
-    }
-
-    .mdx-content h3 {
-      @apply text-xl;
-    }
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5,
+  .prose h6 {
+    @apply scroll-mt-24;
   }
 }
