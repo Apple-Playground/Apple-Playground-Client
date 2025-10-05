@@ -65,7 +65,7 @@ export const AppSidebar = async () => {
                 className="w-[--radix-popper-anchor-width]"
               >
                 <DropdownMenuItem>
-                  <span>Sign out</span>
+                  <span>My Page</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

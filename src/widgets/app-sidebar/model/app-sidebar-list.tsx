@@ -16,4 +16,9 @@ export const sideBarList = [
     url: "#",
     icon: Home,
   },
+  {
+    title: "글 작성",
+    url: "/write",
+    icon: Home
+  }
 ];
