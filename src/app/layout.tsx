@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/app/_providers/theme-provider";
 import { Toaster } from "@/shared/ui/sonner";
+import TanStackQueryClientProvider from "./_providers/queryClient-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,8 +37,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <Toaster position="top-right" />
+          <TanStackQueryClientProvider>
+            {children}
+            <Toaster position="top-right" />
+          </TanStackQueryClientProvider>
         </ThemeProvider>
       </body>
     </html>
