@@ -1,24 +1,9 @@
-import { Home } from "lucide-react";
+import { Pen } from "lucide-react";
 
 export const sideBarList = [
   {
-    title: "홈",
-    url: "/main",
-    icon: Home,
-  },
-  {
-    title: "회고",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "포트폴리오",
-    url: "#",
-    icon: Home,
-  },
-  {
     title: "글 작성",
     url: "/write",
-    icon: Home
+    icon: Pen,
   }
 ];

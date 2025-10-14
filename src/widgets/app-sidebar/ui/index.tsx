@@ -3,7 +3,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
-import { ChevronUp } from "lucide-react";
+import { AppleIcon, ChevronUp } from "lucide-react";
+import Link from "next/link";
 import { auth } from "@/auth";
 import UserAvatar from "@/entities/user/ui";
 import { DropdownMenu } from "@/shared/ui/dropdown-menu";
@@ -18,7 +19,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/shared/ui/sidebar";
-
 import { sideBarList } from "../model/app-sidebar-list";
 
 export const AppSidebar = async () => {
@@ -27,10 +27,14 @@ export const AppSidebar = async () => {
   return (
     <Sidebar>
       <SidebarHeader className="pb-2 border-b-2">
-        <h1 className="text-primary font-orbitron font-bold text-lg">
-          Apple Playground
-        </h1>
-        <p>친구들과 함께하는 공간</p>
+        <Link href={"/main"} className="flex items-center gap-4 p-2">
+          <div className="rounded-2xl">
+            <AppleIcon width={24} height={24} />
+          </div>
+          <h1 className="text-primary font-sfPro font-bold text-lg">
+            Apple Playground
+          </h1>
+        </Link>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup className="gap-8">
