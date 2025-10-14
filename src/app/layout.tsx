@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from 'next/font/local'
+
 import "./globals.css";
 
 import { ThemeProvider } from "@/app/_providers/theme-provider";
 import { Toaster } from "@/shared/ui/sonner";
 import TanStackQueryClientProvider from "./_providers/queryClient-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const sfPro = localFont({
+  src: '../shared/assets/SF-Pro.ttf', // public 폴더가 아닌 상대 경로
+  variable: '--font-sf-pro',
+  display: 'swap',
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${sfPro.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"

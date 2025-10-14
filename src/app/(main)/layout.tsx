@@ -10,7 +10,7 @@ export default function MainLayout({
   return (
     <section>
       <SidebarProvider>
-        <AppSidebar />
+        {/* <AppSidebar /> */}
         <div className="flex flex-col w-full bg-primary-foreground ">
           <Header />
           {children}
