@@ -8,11 +8,10 @@ import { Toaster } from "@/shared/ui/sonner";
 import TanStackQueryClientProvider from "./_providers/queryClient-provider";
 
 const sfPro = localFont({
-  src: '../shared/assets/SF-Pro.ttf', // public 폴더가 아닌 상대 경로
+  src: '../shared/assets/SF-Pro.ttf',
   variable: '--font-sf-pro',
   display: 'swap',
 })
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
