@@ -9,13 +9,13 @@ export default function MainLayout({
 }) {
   return (
     <section>
-      <SidebarProvider>
-        {/* <AppSidebar /> */}
-        <div className="flex flex-col w-full bg-primary-foreground ">
-          <Header />
-          {children}
-        </div>
-      </SidebarProvider>
+      {/* <SidebarProvider> */}
+      {/* <AppSidebar /> */}
+      <div className="flex flex-col w-full bg-primary-foreground ">
+        <Header />
+        {children}
+      </div>
+      {/* </SidebarProvider> */}
     </section>
   );
 }

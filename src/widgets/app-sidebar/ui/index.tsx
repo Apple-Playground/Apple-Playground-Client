@@ -21,6 +21,9 @@ import {
 } from "@/shared/ui/sidebar";
 import { sideBarList } from "../model/app-sidebar-list";
 
+/**
+ * @deprecated
+ */
 export const AppSidebar = async () => {
   const session = await auth();
 
