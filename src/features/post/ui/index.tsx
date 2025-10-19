@@ -7,13 +7,15 @@ import { useCreatePost } from "@/features/post/hooks/useCreatePost";
 import { Button } from "@/shared/ui/button";
 import { Input } from "@/shared/ui/input";
 
-export const CreatePostForm = () => {
+export const PostForm = () => {
+
   const [formData, setFormData] = useState<CreatePostInput>({
     title: "",
     content: "",
     description: "",
     tags: [],
   });
+
   const [tagInput, setTagInput] = useState("");
 
   const createPostMutation = useCreatePost();
