@@ -6,8 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/shared/ui/card";
+import type { Post as PostType } from "../model/post";
 
-export const CarouselPost = ({ post }: { post }) => {
+export const CarouselPost = ({ post }: { post: PostType }) => {
   return (
     <Card className="flex p-0 aspect-[16/9] relative overflow-hidden">
       <Image
