@@ -1,3 +1,5 @@
+"use server";
+
 import { createSupabase } from "@/client";
 
 export const getPosts = async () => {

@@ -2,8 +2,9 @@
 
 import Autoplay from "embla-carousel-autoplay";
 import { use } from "react";
-import type { Post as PostType } from "@/entities/post/model";
-import { CarouselPost, Post } from "@/entities/post/ui";
+import type { Post as PostType } from "@/entities/post/model/post";
+import { CarouselPost } from "@/entities/post/ui/carousel-post";
+import { Post } from "@/entities/post/ui/post";
 import { Carousel, CarouselContent, CarouselItem } from "@/shared/ui/carousel";
 
 type PostsProps = {
@@ -12,6 +13,7 @@ type PostsProps = {
 
 export const Posts = ({ posts }: PostsProps) => {
   const postsData = use(posts);
+
   return (
     <div className="flex flex-col w-full mt-2 gap-4">
       <h2 className="text-spring-green-55 font-pixel font-bold text-2xl">
